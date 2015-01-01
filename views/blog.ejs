@@ -1,0 +1,74 @@
+<%- include header %>
+
+<script type="text/javascript">
+UEDITOR_HOME_URL = '/ueditor/';
+</script>
+
+<div class="postTextArea g-bd2">
+    <div class="g-bdc">
+        
+        <!-- start:左侧部分 -->
+        <div class="g-mn">
+            <div class="g-box3"><h2 class="w-fttl">
+                <% if (type=='blog-new') { %>发布文字<% } %>
+                <% if (type=='blog-edit') { %>编辑文字<% } %>
+                <% if (type=='blog-reserved') { %>转载文字<% } %>
+            </h2></div>
+
+            <!-- start:标题区 -->
+            <div class="g-box2">
+                <h3 class="w-ttl"> <em>标题</em> <small>(可不填)</small></h3>
+                <input id="blogTittle" maxlength="50" class="w-inputxt w-inputxt-1" type="text" value="<% if (type=='blog-edit'||type=='blog-reserved') { %><%= blog.title %><% } %>">
+            </div>
+            <!-- end:标题区 -->
+
+            <!-- start:编辑区 -->
+            <div class="g-box2">
+                <h3 class="w-ttl"><em>内容</em></h3>
+                <div class="editorWrap ztag">
+                    <textarea id="myEditor"><% if (type=='blog-edit') { %><%= blog.content %><% } %><% if (type=='blog-reserved') { %><p>&nbsp;</p><p><a target="_blank" href="#"><%= blog.author_name %>:</a></p><blockquote><%= blog.content %></blockquote><% } %></textarea>
+                </div>
+            </div>
+            <!-- end:编辑区 -->
+
+            <!-- start:操作栏 -->
+            <div class="g-box2">
+                <div class="m-edtact">
+                    <a href="/" class="w-bbtn delete ztag">取　消</a>
+                    <input type="button" class="w-bbtn save ztag" value="保存草稿">
+                    <input type="button" class="w-bbtn preview ztag" value="预　览">
+                    <input type="button" class="w-bbtn w-bbtn-0 publish ztag" value="发　布">
+                </div>
+            </div>
+            <!-- end:操作栏 -->
+        </div>
+        <!-- end:左侧部分 -->
+
+        <!-- start:右侧部分 -->
+        <div class="g-sd">
+            <!-- start:添加标签 -->
+            <div class="g-box2">
+                <div class="tagarea ztag">
+                    <textarea class="ui-2680377936 label" placeholder="添加标签，用逗号分隔"><% if (type=='blog-edit'||type=='blog-reserved') { %><%= blog.label %><% } %></textarea>
+                </div>
+                <div class="m-start m-start-static">
+                    <p class="p7">为日志添加标签，可以吸引更多读者</p>
+                </div>
+            </div>
+            <!-- end:添加标签 -->
+        </div>
+        <!-- end:右侧部分 -->
+
+    </div>
+
+    <% if (type == 'blog-edit') { %>
+    <input type="hidden" value="edit" class="blog-type" />
+    <% } %>
+
+    <% if (type=='blog-reserved') { %>
+    <input type="hidden" value="reserved" class="blog-type" />
+    <% } %>
+
+</div>
+
+<%- include footer %>

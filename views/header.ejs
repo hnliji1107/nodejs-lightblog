@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/stylesheets/layout.css" />
+		<link rel="stylesheet" href="/stylesheets/blog.css" />
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<link rel="stylesheet" href="/stylesheets/detail.css" />
+		<link rel="stylesheet" href="/ueditor/third-party/SyntaxHighlighter/css/shCoreDefault.css" />
+	</head>
+	<body>
+		<div id="lofterheadbar" class="g-hd">
+		    <h1 class="m-logo"><a href="/">NodeJs学习站</a></h1>
+		    <div class="m-nav" id="topbar">
+				<ul class="nav1 tbtag">
+		            <li <% if(type=='index') { %> class="j-crt" <% } %>>
+		            	<a rel="nofollow" href="/">首页</a>
+		            </li>
+		            <% if(loginer) { %>
+		            <li>
+		            	<a href="#" class="tbtag more-oper">更多<span class="more tbtag">&nbsp;&nbsp;&nbsp;</span></a>
+		            	<div class="a-w-sel a-w-sel-4 tbtag a-w-sel-do">
+			            	<div class="w-sel w-sel-4">
+			                	<div class="selc">
+			                    	<div class="selcc tbtag">
+			                            <div class="seli"><a class="nx-1" href="http://www.lofter.com/setting">帐号设置</a></div>
+			                            <div class="seli"><a class="nx-4" href="http://www.lofter.com/help">帮助及反馈</a></div>
+			                            <div class="seli"><a class="nx-5" href="/logout">退出</a></div>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+		            </li>
+		            <% } else { %>
+		            <li <% if(type=='login') { %> class="j-crt" <% } %>>
+						<a href="/login">登录</a>
+					</li>
+					<li <% if(type=='regist') { %> class="j-crt" <% } %>>
+						<a href="/regist">注册</a>
+					</li>
+		            <% } %>
+		        </ul>
+		        <div class="nav2" id="schtagbox">
+		        	<div class="ssch tbtag">
+		                <form class="xtag">
+		                	<a href="#" class="btn xtag"></a>
+		                    <input type="text" placeholder="搜索标签、博客" class="xtag">
+		                </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+

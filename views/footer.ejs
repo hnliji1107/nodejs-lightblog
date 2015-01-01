@@ -1,0 +1,28 @@
+	<hr>
+	<div class="g-ft">
+		<p>©NodeJs学习站-技术架构[nodejs+express+ejs+mongodb+seajs] by 2013-06-07</p>
+	</div>
+
+	<div class="upDown s-stealth">
+		<a href="#" class="upMove" title="返回顶部"></a>
+		<a href="#" class="hdMove" title="单击跟随鼠标上下滚动"></a>
+		<a href="#" class="downMove" title="返回底部"></a>
+	</div>
+
+<script src="/javascripts/sea.js" <% if (type=='index' || type=='bowen' || type=='love') { %>data-main="index"<% } %><% if (type=='login') { %>data-main="login"<% } %><% if (type=='regist') { %>data-main="regist"<% } %><% if (type=='blog-new'||type=='blog-edit'||type=='blog-reserved') { %>data-main="blog"<% } %><% if (type=='detail') { %>data-main="detail"<% } %>></script>
+
+<% if (type=='detail') { %>
+<script src="/ueditor/third-party/SyntaxHighlighter/js/shCore.js"></script>
+<script src="/ueditor/third-party/SyntaxHighlighter/js/shBrushXml.js"></script>
+<script src="/ueditor/third-party/SyntaxHighlighter/js/shBrushCss.js"></script>
+<script src="/ueditor/third-party/SyntaxHighlighter/js/shBrushJScript.js"></script>
+<script src="/ueditor/third-party/SyntaxHighlighter/js/shBrushAS3.js"></script>
+<script src="/ueditor/third-party/SyntaxHighlighter/js/shBrushPhp.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.all();
+</script>
+<% } %>
+
+</body>
+</html>
+  

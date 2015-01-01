@@ -1,0 +1,178 @@
+<%- include header %>
+
+<% if(loginer) { %>
+<div class="boprt a-control">
+	<ul>
+		<% if (loginer._id == blog.author_id) { %>
+		<li><a href="/blog/edit/<%= blog._id %>" class="boprt09 notxt" title="编辑"><em>编辑</em></a></li>
+		<li><a href="/blog/del/<%= blog._id %>" class="boprt08 notxt" title="删除"><em>删除</em></a></li>
+		<% } else { %>
+		<li><a href="/blog/love/<%= blog._id %>" class="boprt06 notxt loving <% if (blog.isLove) { %>boprt07<% } %>" title="<% if (blog.isLove) { %>取消喜欢<% } else { %>喜欢<% } %>"><em><% if (blog.isLove) { %>取消喜欢<% } else { %>喜欢<% } %></em></a></li>
+		<li><a href="/blog/recommend/<%= blog._id %>" class="boprt04 notxt recommending <% if (blog.isRecommend) { %>boprt12<% } %>" title="<% if (blog.isRecommend) { %>取消推荐<% } else { %>推荐<% } %>"><em><% if (blog.isRecommend) { %>取消推荐<% } else { %>推荐<% } %></em></a></li>
+		<li><a href="/blog/reserved/<%= blog._id %>" title="转载" target="_blank" class="boprt10"><em>转载</em></a></li>
+		<li><a href="#" class="boprt02" title="关注"><em>关注</em></a></li>
+		<% } %>
+		<li><a href="/" class="boprt01"><em>返回首页</em></a></li>
+	</ul>
+</div>
+<% } %>
+
+<div class="box wid928">
+	<div class="selfinfo">
+		<div class="logo">
+			<a href="/">
+				<img src="<%= blog.author_avatar+'?s=80' %>"> <i></i>
+			</a>
+		</div>
+		<h1>
+			<a href="/"><%= blog.author_name %></a>
+		</h1>
+	</div>
+	<ul class="sidelist">
+		<li><a href="http://xingkong2013.lofter.com/rss" class="list_1" title="RSS"></a></li>
+		<li><a href="http://xingkong2013.lofter.com/view" class="list_2" title="归档"></a></li>
+		<li><a href="http://www.lofter.com/message/xingkong2013" rel="nofollow" class="list_4" title="私信"></a></li>
+	</ul>
+</div>
+<div class="postwrapper box wid928">
+	<div class="block article">
+		<div class="side">
+			<div class="day">
+				<a href="http://xingkong2013.lofter.com/post/1fd21d_6d4bb9"><%= blog.date %></a>
+			</div>
+			<div class="month">
+				<a href="http://xingkong2013.lofter.com/post/1fd21d_6d4bb9"><%= blog.month %></a>
+			</div>
+		</div>
+		<div class="main">
+			<div class="content">
+				<div class="text">
+					<% if (blog.title) { %>
+					<h2>
+						<a href="http://xingkong2013.lofter.com/post/1fd21d_6d4bb9"><%= blog.title %></a>
+					</h2>
+					<% } %>
+					<%- blog.content %>
+				</div>
+			</div>
+
+			<% if (blog.label.length > 0) { %>
+			<div class="tag">				
+				<% blog.label.forEach(function(label) { %>
+				<a href="http://lily-smile.lofter.com/tag/dd">● <%= label %></a>
+				<% }) %>
+			</div>
+			<% } %>
+
+		</div>
+	</div>
+
+	<% if (loginer || blog.comments.length > 0) { %>
+	<!-- start: 评论列表 -->
+	<div class="block">
+		<div class="main commentArea">
+			<h3 class="nctitle">评论(<%= blog.comments.length %>)</h3>
+			<div class="bcmt">
+				<% if(loginer) { %>
+				<div class="bcmtadd">
+			    	<div class="bcmtipt s-bd0 s-bg0">
+			        	<div class="bcmtiptc"><textarea class="s-fc0 ztag" maxlength="200"></textarea></div>
+			        </div>
+			         <div class="bcmtbtn">
+			        	<button class="s-bd1 s-fc1 s-bg1 ztag pubComment" href="/blog/comment/<%= blog._id %>">发布</button>
+			        	<div class="txt s-fc0"></div>
+			        </div>
+			    </div>
+			    <% } %>
+			    <div class="bcmtlst">
+			        <ul class="clearfix ztag">
+			        	<% if (blog.comments.length > 0) { %>
+						<% blog.comments.reverse().forEach(function(d) { %>
+			        	<li class="s-bd2 s-bg2">
+			                <div class="bcmtlsta clearfix">
+			                    <div class="bcmtlstb">
+			                        <a href="#" target="_blank" title="<%= d._name %> - <%= d._time %>">
+										<img class="xtag" src="<%= d._avatar+'?s=20' %>" alt="<%= d._name %>">
+									</a>
+			                    </div>
+			                    <div class="bcmtlstc">
+			                        <div class="bcmtlstd clearfix">
+			                            <div class="bcmtlste clearfix">
+			                                <div class="bcmtlstg">
+			                                    <div class="bcmtlsti">
+			                                        <div class="bcmtlstj">
+			                                        	<a class="s-fc2 itag bcmtlstk" href="#" target="_blank" title="星空 - <%= d._time %>"><%= d._name %></a>
+			                                        	<% if (d._cname) { %>
+														<span class="s-fc3 itag">回复了&nbsp;&nbsp;<a class="s-fc2 itag" target="_blank" href="#"><%= d._cname %></a></span>
+														<% } %>
+			                                        	<span class="bcmtlstf s-fc4">：</span>
+			                                        	<span class="bcmtlstf s-fc4 itag"><%= d._content %></span>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                                <% if (loginer) { %>
+			                                <div class="bcmtlsth">
+			                                	<input type="hidden" value="<%= d._id %>" class="comment_id" />
+			                                	<% if (loginer._id == d._uid) { %>
+			                                    <a class="s-fc2 itag delComment" href="/blog/delComment/<%= blog._id %>">删除</a>
+			                                    <% } %>
+			                                    <a class="s-fc2 itag replyComment" href="#">回复</a>
+			                                </div>
+			                                <% } %>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			            </li>
+			            <% }) %>
+			            <% } %>
+			        </ul>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<!-- end: 评论列表 -->
+	<% } %>
+
+	<% if (blog.hots.length > 0) { %>
+	<!-- start: 热度列表 -->
+	<div class="block">
+    	<div class="main hots">
+    		<h3 class="nctitle">热度(<%= blog.hots.length %>)</h3>
+    		<ol class="notes">
+    			<% if (blog.hots.length > 0) { %>
+				<% blog.hots.forEach(function(hot) { %>
+    			<li class="note like">
+    				<a href="#" title="<%= hot._name %> - <%= hot._time %>">
+    					<img class="avatar" src="<%= hot._avatar+'?s=20' %>" alt="<%= hot._name %>">
+    				</a>
+    				<span class="action">
+    					<a href="#" title="<%= hot._name %> - <%= hot._time %>"><%= hot._name %></a>
+    					<% if (hot.type == 'love') { %>喜欢此文字<% } else { %>推荐了此文字<% } %>
+    				</span>
+    			</li>
+    			<% }) %>
+				<% } %>
+    		</ol>
+    	</div>
+    </div>
+	<!-- end: 热度列表 -->
+	<% } %>
+
+	<div class="page">
+		<div class="prev <% if (blog.pid == 0) { %>unactive<% } %>">
+			<a href="<% if (blog.pid != 0) { %>/bowen/detail/<%= blog.pid %><% } else { %>javascript:;<% } %>" title="上一篇">
+				上一篇
+			</a>
+		</div>
+
+		<div class="next <% if (blog.pid == 0) { %>unactive<% } %>">
+			<a href="<% if (blog.nid != 0) { %>/bowen/detail/<%= blog.nid %><% } else { %>javascript:;<% } %>" title="下一篇">
+				下一篇
+			</a>
+		</div>
+	</div>
+
+</div>
+
+<%- include footer %>

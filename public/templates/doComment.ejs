@@ -1,0 +1,26 @@
+<li class="a-slide a-slide-do" style="height:0;">
+	<div class="cmti slide xtag">
+		<div class="w-img2 w-img2-2">
+			<a href="#" target="_blank" title="<%= data._name %> - 1秒前">
+				<img class="xtag" src="<%= data._avatar+'+?s=20' %>" alt="<%= data._name %>">
+			</a>
+		</div>
+		<div class="cmtcnt">
+			<div class="cmthot">
+				<span class="cmtusr">
+					<a href="#" target="_blank" class="s-fc4 xtag commenter" title="<%= data._name %> - 1秒前"><%= data._name %>
+					</a>
+					<% if (typeof type != 'undefined' && type == 'reply') { %>
+					<span class="xtag">&nbsp;&nbsp;回复了&nbsp;&nbsp;<a class="s-fc4 xtag" target="_blank" href="#"><%= data._cname %></a></span>
+					<% } %>
+				</span>
+				<span class="xtag"><%= data._content %></span>
+			</div>
+			<div class="cmtopt">
+				<input type="hidden" value="<%= data._id %>" class="comment_id">
+				<a href="/blog/delComment/<%= blog_id %>" class="xtag cmtj s-fc4 delComment">删除</a>
+				<a href="#" class="s-fc4 xtag replyComment">回复</a>
+			</div>
+		</div>
+	</div>
+</li>

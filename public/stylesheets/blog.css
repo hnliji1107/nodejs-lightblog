@@ -1,0 +1,146 @@
+.clearfix {
+	zoom:1;
+}
+.clearfix:after {
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+	content:'.';
+}
+.m-edtact {
+	padding-bottom:20px;
+}
+.publishType .selpublishtype .ztxt {
+	padding-left:10px;
+	width:142px;
+}
+.usedtag,.recommendtag {
+	overflow:hidden;
+	width:100%;
+	_position:relative;
+}
+.m-edtact .w-bbtn {
+	color:#777;
+}
+.m-edtact .w-bbtn-0 {
+	color:#fff;
+}
+.m-edtact .delete {
+	left:-10px;
+}
+.tagerrmsg {
+	display:none;
+	padding-bottom:0;
+}
+body .g-bd2 .g-sd .g-box2 {
+	padding-top:29px;
+}
+.publishTtl {
+	float:left;
+	width:50px;
+	height:40px;
+	font-weight:normal;
+	line-height:40px;
+}
+.publishTo {
+	float:left;
+}
+.publishTo .selpublish {
+	width:140px;
+}
+.publishTo .selpublish .ztxt {
+	width:99px;
+}
+.publishTo .selpublish .ztxt span {
+	width:65px;
+}
+.postTextArea .w-wb {
+	margin-left:-9px;
+}
+.publishDateTime {
+	margin-top:7px;
+	width:190px;
+	height:38px;
+	border:1px solid #c0c0c0;
+	background:#fff url(../images/shadow-in.png) 0 0 no-repeat;
+	font-size:16px;
+	line-height:38px;
+}
+.publishDateTime .publishDate {
+	position:relative;
+	z-index:8;
+	float:left;
+	width:116px;
+	height:38px;
+	zoom:1;
+}
+.publishDate .dateInput {
+	float:left;
+	width:116px;
+	height:38px;
+	outline:none;
+	border:0;
+	text-align:center;
+	font-size:16px;
+	line-height:38px;
+}
+.publishDate .calendarWrap {
+	position:absolute;
+	top:38px;
+	left:-1px;
+}
+.publishDateTime .publishTime {
+	position:relative;
+	z-index:10;
+	float:right;
+	width:72px;
+	height:38px;
+	border-left:1px solid #c0c0c0;
+	zoom:1;
+}
+.publishTime .timeInput {
+	float:right;
+	overflow:hidden;
+	padding-right:6px;
+	width:66px;
+	height:38px;
+	outline:none;
+	border:0;
+	text-align:center;
+	font-size:16px;
+	line-height:38px;
+}
+.publishTime .timeList {
+	position:absolute;
+	top:38px;
+	left:-1px;
+}
+.publishDate .js-errorDate,.publishTime .js-errorTime {
+	background-color:#ffcfcf;
+}
+.ui-2680377936 {
+	position: relative;
+	zoom: 1;
+	width: 180px;
+	height: 70px;
+	padding: 4px 5px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: solid 1px #c0c0c0;
+	color: #222;
+	background: #fff url(../images/shadow-in.png) no-repeat;
+}
+.ui-4890909840 .zcvr {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/empty.png);
+}
+.ui-4890909840 .zcvr,
+.ui-4890909840 .zhnt {
+    position: fixed;
+    _position: absolute;
+    z-index: 80;
+}

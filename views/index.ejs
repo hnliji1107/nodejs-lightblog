@@ -1,0 +1,298 @@
+<%- include header %>
+
+<div class="g-bd">
+	<div class="g-bdc">
+
+		<!-- start: 左侧 -->
+		<div class="g-mn">
+			<!-- start:非自己的文章区域 -->
+			<% if (blog.length > 0) { %>
+			<% blog.forEach(function(one) { %>
+			<div class="m-mlist">
+				<div class="mlistimg">
+					<div class="w-img">
+						<a href="#" target="_blank" title="<%= one.author_name %>">
+							<img src="<%= one.author_avatar+'?s=64' %>" alt="<%= one.author_name %>">
+						</a>
+					</div>
+					<!-- start: 头像下操作列表 -->
+					<div class="w-img w-opr-list">
+						<div class="w-sel w-sel-7 s-hide">
+							<div class="selc">
+								<div class="selcc">
+									<div class="seli">
+										<a class="sela selicn sellike" href="/love/<%= one.author_id %>">喜欢的文章</a>
+									</div>
+									<div class="seli">
+										<a class="sela selicn selfollow" href="#">关注的博客</a>
+									</div>
+									<% if (loginer) { %>
+									<div class="seli">
+										<a class="sela selicn sel1" href="#" target="_blank">发私信</a>
+									</div>
+									<div class="seli">
+										<a class="sela selicn sel3" href="#">关注</a>
+									</div>
+									<% } %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end: 头像下操作列表 -->
+				</div>
+				<div class="mlistcnt">
+					<div class="isay">
+						<div class="isayt">
+							<a class="isayc" href="/bowen/detail/<%= one._id %>" title="查看全文 - <%= one.time %>" target="_blank">打开新页</a>
+						</div>
+						<div class="isaym">
+							<div class="w-who">
+								<a href="http://floatin.lofter.com" target="_blank"><%= one.author_name %></a>
+								<% if (loginer) { %>
+								<a href="#" class="w-icn2 w-icn2-3 a-followicon icontag446336" title="关注 <%= one.author_name %>">关注</a>
+								<% } %>
+							</div>
+							<div>
+								<div class="m-icnt">
+									<h2 class="tit"><%= one.title %></h2>
+									<div class="cnt">
+										<div class="txt">
+											<%- one.content %>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-opt">
+								<% if (one.label.length > 0) { %>
+								<div class="opta">
+									<% one.label.forEach(function(label) { %>
+									<span class="opti">
+										<a href="#">
+											<span><%= label %></span>
+										</a>
+									</span>
+									<% }) %>
+								</div>
+								<% } %>
+								<div class="optb">
+									<span class="opti">
+										<a href="#" title="热度" class="hotnum <% if (one.hots.length>0) { %>hot-opening<% } %>">热度(<%= one.hots.length %>)</a>
+										<span class="opticrt"></span>
+									</span>
+									<span class="opti">
+										<a href="#" title="评论" <% if (loginer || one.comments.length>0) { %>class="opening"<% } %>>评论(<%= one.comments.length %>)</a>
+										<span class="opticrt"></span>
+									</span>
+									<% if (loginer) { %>
+
+									<% if (one.author_id == loginer._id) { %>
+									<!-- start: 自己的文章时操作 -->
+									<span class="opti">
+										<a href="/blog/edit/<%= one._id %>" title="编辑">编辑</a>
+									</span>
+									<span class="opti">
+										<a href="/blog/del/<%= one._id %>" title="删除" class="delete">删除</a>
+									</span>
+									<!-- end: 自己的文章时操作 -->
+									<% } else { %>
+
+									<span class="opti">
+										<a href="/blog/reserved/<%= one._id %>" title="转载" target="_blank">转载</a>
+									</span>
+									<span class="opti">
+										<a class="recommending" href="/blog/recommend/<%= one._id %>" title="<% if (one.isRecommend) { %>取消推荐<% } else { %>推荐<% } %>"><% if (one.isRecommend) { %>已推荐<% } else { %>推荐<% } %></a>
+									</span>
+									<span class="opti">
+										<a class="w-icn w-icn-0b <% if (one.isLove) { %>w-icn-0b-do<% } %>" href="/blog/love/<%= one._id %>" title="<% if (one.isLove) { %>取消喜欢<% } else { %>喜欢<% } %>"><% if (one.isLove) { %>取消喜欢<% } else { %>喜欢<% } %></a>
+									</span>
+
+									<% } %>
+
+									<% } %>
+								</div>
+							</div>
+						</div>
+
+						<!-- start: 热度列表 -->
+						<div class="a-isaym2 a-isaym2-do">
+							<div class="isaym2 isaym2-open hot-open">
+								<div>
+									<div class="shadow"></div>
+									<div class="isaymin">
+										<div class="m-cmt">
+											<div class="a-show a-show-cmtul a-show-do">
+												<ul class="xtag">
+													<% if (one.hots.length > 0) { %>
+													<% one.hots.forEach(function(hot) { %>
+													<li>
+														<div class="cmti">
+															<div class="w-img2 w-img2-4">
+																<a href="#" target="_blank" title="<%= hot._name %> - <%= hot._time %>">
+																	<img class="xtag" src="<%= hot._avatar+'?s=20' %>" alt="<%= hot._name %>">				
+																	<span class="w-icn3 <% if (hot.type == 'love') { %>w-icn3-5<% } else { %>w-icn3-2<% } %>">&nbsp;</span>
+																</a>
+															</div>
+															<div class="cmtcnt xtag">
+																<div class="cmthot">
+																	<a href="#" target="_blank" class="s-fc4" title="<%= hot._name %> - <%= hot._time %>"><%= hot._name %></a>
+																	&nbsp;&nbsp;<% if (hot.type == 'love') { %>喜欢此文字<% } else { %>推荐了此文字<% } %>
+																</div>
+															</div>
+														</div>
+													</li>
+													<% }) %>
+													<% } %>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: 热度列表 -->
+
+						<!-- start: 评论列表 -->
+						<div class="a-isaym2 a-isaym2-do">
+							<div class="isaym2 isaym2-open comment-open">
+								<div>
+									<div class="shadow"></div>
+									<div class="isaymin">
+										<% if (loginer) { %>
+										<div class="isayi add">
+											<textarea class="w-inputxt xtag" maxlength="200"></textarea>
+											<span class="proxy-span2">
+												<span class="proxy-span"></span>
+											</span>
+											<a href="/blog/comment/<%= one._id %>" class="w-bbtn xtag w-bbtn-0">发　布</a>
+										</div>
+										<% } %>
+										<div class="m-cmt">
+											<div class="a-show a-show-cmtul">
+												<ul class="xtag">
+													<% if (one.comments.length > 0) { %>
+													<% one.comments.reverse().forEach(function(d) { %>
+													<li class="a-slide a-slide-do">
+														<div class="cmti slide xtag">
+															<div class="w-img2 w-img2-2">
+																<a href="#" target="_blank" title="<%= d._name %> - <%= d._time %>">
+																	<img class="xtag" src="<%= d._avatar+'?s=20' %>" alt="<%= d._name %>">
+																</a>
+															</div>
+															<div class="cmtcnt">
+																<div class="cmthot">
+																	<span class="cmtusr">
+																		<a href="#" target="_blank" class="s-fc4 xtag commenter" title="<%= d._name %> - <%= d._time %>"><%= d._name %></a>
+																		<% if (d._cname) { %>
+																		<span class="xtag">&nbsp;&nbsp;回复了&nbsp;&nbsp;<a class="s-fc4 xtag" target="_blank" href="#"><%= d._cname %></a></span>
+																		<% } %>
+																	</span>
+																	<span class="xtag"><%= d._content %></span>
+																</div>
+																<% if (loginer) { %>
+																<div class="cmtopt">
+																	<input type="hidden" value="<%= d._id %>" class="comment_id" />
+																	<% if (loginer._id == d._uid) { %>
+																	<a href="/blog/delComment/<%= one._id %>" class="xtag cmtj s-fc4 delComment">删除</a>
+																	<% } %>
+																	<a href="#" class="s-fc4 xtag replyComment">回复</a>
+																</div>
+																<% } %>
+															</div>
+														</div>
+													</li>
+													<% }) %>
+													<% } %>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: 评论列表 -->
+
+						<div class="isayb"></div>
+					</div>
+				</div>
+			</div>
+			<% }) %>
+			<% } %>
+			<!-- end:非自己的文章区域 -->
+
+			<!-- start:没有文章 -->
+			<% if (blog.length<=0 && self_blog_count<=0) { %>
+			<div class="m-mlist">
+				<div class="mlistcnt">
+					<div class="isay">
+						<div class="isayt3"></div>
+						<div class="isaym3">
+							<div class="m-end m-end-2">
+								<h2>没有文章</h2>
+							</div>
+						</div>
+						<div class="isayb"></div>
+					</div>
+				</div>
+			</div>
+			<% } %>
+			<!-- end:没有文章 -->
+
+		</div>
+		<!-- end: 左侧 -->
+
+		<!-- start: 右侧 -->
+		<div id="rside" class="g-sd">
+
+			<% if (loginer) { %>
+			<!-- star:用户信息，文章，博客设置 -->
+			<div class="g-box">
+				<div class="m-menu">
+					<div class="menut"></div>
+					<div class="menum">
+						<ul>
+							<li class="first large">
+								<a href="/bowen" class="mi usname">
+									<span class="txt">
+										<span class="lg1"><%= loginer.name %></span>
+										<span class="lg2"><%= loginer.email %></span>
+									</span>
+								</a>
+								<a href="#" class="dropicon bmtag"></a>
+							</li>
+							<li class="bdcolor">
+								<div class="crtp"></div>
+								<a href="/bowen" class="mi">
+									<span class="icn icn-9"></span>
+									<span class="txt">文章</span>
+									<span class="inf inf-1"><%= self_blog_count %></span>
+								</a>
+							</li>
+							<li>
+		                		<a class="mi" href="/love/<%= loginer._id %>">
+		                			<span class="icn icn-3"></span>
+		                			<span class="txt">喜欢</span>
+		                			<span class="inf inf-1"><%= love_blog_count %></span>
+		                		</a>
+		                	</li>
+		                	<li>
+		                		<a class="mi" href="#">
+		                			<span class="icn icn-1"></span>
+		                			<span class="txt">关注</span>
+		                			<span class="inf inf-1">0</span>
+		                		</a>
+		                	</li>
+						</ul>
+					</div>
+					<div class="menub"></div>
+				</div>
+			</div>
+			<!-- end:用户信息，文章，博客设置 -->
+			<% } %>
+
+		</div>
+		<!-- end: 右侧 -->
+		
+	</div>
+</div>
+
+<%- include footer %>

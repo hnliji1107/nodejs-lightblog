@@ -1,0 +1,33 @@
+<li class="s-bd2 s-bg2" style="height:0;">
+    <div class="bcmtlsta clearfix">
+        <div class="bcmtlstb">
+            <a href="#" target="_blank" title="<%= data._name %> - 1秒前">
+				<img class="xtag" src="<%= data._avatar+'+?s=20' %>" alt="<%= data._name %>">
+			</a>
+       </div>
+       <div class="bcmtlstc">
+            <div class="bcmtlstd clearfix">
+                <div class="bcmtlste clearfix">
+                    <div class="bcmtlstg">
+                        <div class="bcmtlsti">
+                            <div class="bcmtlstj">
+                            	<a class="s-fc2 itag bcmtlstk" href="#" target="_blank" title="<%= data._name %> - 1秒前"><%= data._name %>
+                            	</a>
+                            	<% if (typeof type != 'undefined' && type == 'reply') { %>
+								<span class="s-fc3 itag">回复了&nbsp;&nbsp;<a class="s-fc2 itag" target="_blank" href="#"><%= data._name %></a></span>
+								<% } %>
+                            	<span class="bcmtlstf s-fc4">：</span>
+                            	<span class="bcmtlstf s-fc4 itag"><%= data._content %></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bcmtlsth">
+                    	<input type="hidden" value="<%= data._id %>" class="comment_id">
+                        <a class="s-fc2 itag delComment" href="/blog/delComment/<%= blog_id %>">删除</a>
+                        <a class="s-fc2 itag replyComment" href="#">回复</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>

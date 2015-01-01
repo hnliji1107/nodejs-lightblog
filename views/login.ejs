@@ -1,0 +1,30 @@
+<%- include header %>
+
+<form class="form-horizontal login" method="post" action="/login">
+	<fieldset>
+		<legend>用户登录</legend>
+		<div class="control-group">
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on morespace">邮 箱</span>
+					<input class="span3" name="email" size="16" type="text">
+				</div>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on morespace">密 码</span>
+					<input class="span3" name="password" size="16" type="password">
+				</div>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+		<div class="form-actions">
+			<button type="submit" class="bootstrap-btn bootstrap-btn-primary bootstrap-btn-large">登 录</button>
+		</div>
+	</fieldset>
+</form>
+
+<%- include footer %>

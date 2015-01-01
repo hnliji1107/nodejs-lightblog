@@ -1,0 +1,298 @@
+.s-hide {
+    display: none !important;
+}
+.s-stealth {
+    visibility: hidden;
+}
+.m-logo, .m-logo a {
+    background: none;
+    width: auto;
+    color: #fff;
+    font-size: 36px;
+    text-indent: 0;
+}
+.form-horizontal {
+    text-align: left;
+    padding-left: 500px;
+}
+.form-horizontal input {
+    display: inline-block;
+    height: 40px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 40px;
+    color: #555555;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+         -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+            transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.form-horizontal legend {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.form-horizontal .form-actions {
+    margin: 20px 0;
+}
+
+.control-group.error .help-inline {
+    margin-left: 15px;
+    font-size: 16px;
+    color: #b94a48;
+}
+
+.control-group.error input{
+    border-color: #b94a48;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.control-group.error .input-prepend .add-on{
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #b94a48;
+}
+
+.input-prepend {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-prepend input {
+    position: relative;
+    margin-bottom: 0;
+    *margin-left: 0;
+    vertical-align: top;
+    -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+}
+
+.input-prepend .add-on {
+    display: inline-block;
+    width: auto;
+    height: 40px;
+    min-width: 16px;
+    margin-right: -1px;
+    padding: 4px 15px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ffffff;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.input-prepend .add-on.morespace {
+    width: 56px;
+}
+
+.input-prepend .span3 {
+    width: 200px;
+}
+
+.alert {
+    padding: 8px 14px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+      border-radius: 4px;
+}
+
+.alert .close {
+    float: right;
+}
+
+.alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    font-size: 18px;
+    width: 500px;
+}
+
+.bootstrap-btn {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 4px 10px 4px;
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(top, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+    border: 1px solid #cccccc;
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    *margin-left: .3em;
+}
+.bootstrap-btn:hover,
+.bootstrap-btn:active,
+.bootstrap-btn.active,
+.bootstrap-btn.disabled,
+.bootstrap-btn[disabled] {
+    background-color: #e6e6e6;
+}
+.bootstrap-btn:active,
+.bootstrap-btn.active {
+    background-color: #cccccc\9;
+}
+.bootstrap-btn:hover {
+    color: #333333;
+    text-decoration: none;
+    background-color: #e6e6e6;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -ms-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+}
+.bootstrap-btn:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.bootstrap-btn.active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #e6e6e6;
+    background-color: #d9d9d9\9;
+    outline: 0;
+}
+.bootstrap-btn-large {
+    padding: 10px 126px;
+    line-height: normal;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    *width: 300px;
+}
+.bootstrap-btn-primary,
+.bootstrap-btn-primary:hover {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+}
+.bootstrap-btn-primary.active,
+.bootstrap-btn-warning.active,
+.bootstrap-btn-danger.active,
+.bootstrap-btn-success.active,
+.bootstrap-btn-info.active,
+.bootstrap-btn-inverse.active {
+    color: rgba(255, 255, 255, 0.75);
+}
+.bootstrap-btn-primary {
+    background-color: #0074cc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0055cc);
+    background-image: -ms-linear-gradient(top, #0088cc, #0055cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0055cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0055cc);
+    background-image: linear-gradient(top, #0088cc, #0055cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0);
+    border-color: #0055cc #0055cc #003580;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.bootstrap-btn-primary:hover,
+.bootstrap-btn-primary:active,
+.bootstrap-btn-primary.active,
+.bootstrap-btn-primary.disabled,
+.bootstrap-btn-primary[disabled] {
+    background-color: #0055cc;
+}
+.bootstrap-btn-primary:active,
+.bootstrap-btn-primary.active {
+    background-color: #004099\9;
+}
+
+/* 返回顶部 */
+.upDown {
+    position: fixed;
+    _position: absolute;
+    top: 50%;
+    _top: expression(eval(document.documentElement.clientHeight/2+document.documentElement.scrollTop));
+    right: 10px;
+    z-index: 999;
+    margin-top: -48px;
+    width: 32px;
+    height: 96px;
+}
+.upDown a {
+    display: block;
+    width: 34px;
+    outline: none;
+    background-image: url(../images/upDown.png);
+    _background-image: url(../images/upDown_ie6.png);
+    background-repeat: no-repeat
+}
+.upDown .udHide {
+    background-image: none
+}
+.upDown .upMove {
+    height: 30px;
+    background-position: left top
+}
+.upDown .downMove {
+    height: 30px;
+    background-position: left bottom
+}
+.upDown .hdMove {
+    height:35px;
+    background-position: left -29px
+}
+.upDown .upMove:hover {
+    background-position: right top
+}
+.upDown .downMove:hover {
+    background-position: right bottom
+}
+
+

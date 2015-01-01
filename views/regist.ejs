@@ -1,0 +1,48 @@
+<%- include header %>
+
+<form class="form-horizontal regist" method="post" action="/reg">
+	<fieldset>
+		<legend>用户注册</legend>
+		<div class="control-group">
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on morespace">邮 箱</span>
+					<input class="span3" name="email" size="16" type="text" placeholder="请输入您常用的邮箱">
+				</div>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on morespace">昵 称</span>
+					<input class="span3" name="nickName" size="16" type="text">
+				</div>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on morespace">密 码</span>
+					<input class="span3" name="password" size="16" type="password">
+				</div>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on">重复密码</span>
+					<input class="span3" name="repassword" size="16" type="password">
+				</div>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+		<div class="form-actions">
+			<button type="submit" class="bootstrap-btn bootstrap-btn-primary bootstrap-btn-large">注 册</button>
+		</div>
+	</fieldset>
+</form>
+
+<%- include footer %>
